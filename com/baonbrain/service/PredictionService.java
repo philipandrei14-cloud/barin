@@ -5,17 +5,10 @@ import com.baonbrain.util.FormatUtil;
 
 import java.util.*;
 
-/**
- * Predictive Expense Forecasting Service.
- * Uses simple moving-average logic on past monthly spending per category
- * to forecast the current month's spending.
- */
+
 public class PredictionService {
 
-    /**
-     * Returns predicted spending per category for the current month
-     * based on the average of past months (up to 3 months back).
-     */
+
     public static Map<Expense.Category, Double> predictCurrentMonth(List<Expense> allExpenses) {
         Calendar cal = Calendar.getInstance();
         int curYear = cal.get(Calendar.YEAR);
@@ -57,9 +50,7 @@ public class PredictionService {
         return prediction;
     }
 
-    /**
-     * Returns warnings: categories where current-month spending > 80% of budget limit.
-     */
+    //Warnings
     public static List<String> generateWarnings(
             Map<Expense.Category, Double> spent,
             Map<Expense.Category, Double> limits) {
@@ -85,9 +76,8 @@ public class PredictionService {
         return String.format("₱%,.2f", v);
     }
 
-    /**
-     * Forecast remaining days spending for current month.
-     */
+
+    //Forecast remaining days spending for current month.
     public static double forecastRemainingSpend(List<Expense> expenses) {
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);

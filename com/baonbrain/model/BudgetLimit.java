@@ -12,9 +12,9 @@ public class BudgetLimit implements Serializable {
     private int month; // 1-12
     private int year;
 
-    public BudgetLimit() {}
+    public BudgetLimit(int i, int id, Expense.Category cat, double limit, int m, int y) {}
 
-    public BudgetLimit(int id, int userId, Expense.Category category, double limitAmount, int month, int year) {
+    public BudgetLimit(int id, int userId, Expense.Category category, double limitAmount, int month, int year,double time) {
         this.id = id;
         this.userId = userId;
         this.category = category;

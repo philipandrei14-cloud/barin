@@ -21,6 +21,7 @@ public class BudgetPanel extends JPanel {
 
     private static final String[] COLS = {"Category", "Budget Limit", "Spent This Month", "Remaining", "Status"};
 
+    //BudgetPanel Frame
     public BudgetPanel(User user, MainFrame mainFrame) {
         this.user = user;
         this.mainFrame = mainFrame;
@@ -28,7 +29,7 @@ public class BudgetPanel extends JPanel {
         setBackground(AppColors.BG_MAIN);
         initUI();
     }
-
+    //UI
     private void initUI() {
         JPanel north = new JPanel(new BorderLayout());
         north.setBackground(AppColors.BG_MAIN);
@@ -123,7 +124,7 @@ public class BudgetPanel extends JPanel {
             });
         }
     }
-
+    //limits
     private Map<Expense.Category, Double> getLimitsForMonth(int year, int month) {
         Map<Expense.Category, Double> map = new LinkedHashMap<>();
         for (BudgetLimit b : DataStore.getBudgetsByUser(user.getId())) {
@@ -132,7 +133,7 @@ public class BudgetPanel extends JPanel {
         }
         return map;
     }
-
+    //Spent
     private Map<Expense.Category, Double> getSpentThisMonth(int year, int month) {
         Map<Expense.Category, Double> map = new HashMap<>();
         Calendar cal = Calendar.getInstance();
@@ -143,7 +144,7 @@ public class BudgetPanel extends JPanel {
         }
         return map;
     }
-
+    //Set Budget
     private void openSetDialog() {
         JDialog d = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), "Set Budget Limit", true);
         d.setSize(360, 260);
@@ -197,6 +198,7 @@ public class BudgetPanel extends JPanel {
         d.setVisible(true);
     }
 
+    //detes the budget
     private void deleteSelected() {
         int row = table.getSelectedRow();
         if (row < 0) { JOptionPane.showMessageDialog(this, "Select a row."); return; }

@@ -172,7 +172,7 @@ public class DashboardPanel extends JPanel {
         revalidate();
     }
 
-    // ─── Trend Bar Chart ──────────────────────────────────────────────────
+    //Trend Bar Chart
     private void drawTrendChart(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -225,7 +225,7 @@ public class DashboardPanel extends JPanel {
         g2.drawString("₱0", 2, padT + chartH);
     }
 
-    // ─── Pie Chart ────────────────────────────────────────────────────────
+    //Pie Chart
     private void drawPieChart(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);

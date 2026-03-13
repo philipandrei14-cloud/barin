@@ -195,8 +195,7 @@ public class PredictionPanel extends JPanel {
     private JPanel summaryCard(String title, String value, Color accent) {
         JPanel card = new JPanel(new BorderLayout(0, 4));
         card.setBackground(Color.WHITE);
-        card.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(AppColors.BORDER),
+        card.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(AppColors.BORDER),
                 new EmptyBorder(12, 14, 12, 14)));
         JLabel t = new JLabel(title);
         t.setFont(new Font("SansSerif", Font.PLAIN, 12));

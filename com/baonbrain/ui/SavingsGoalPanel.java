@@ -22,7 +22,7 @@ public class SavingsGoalPanel extends JPanel {
         setBackground(AppColors.BG_MAIN);
         initUI();
     }
-
+    //UI
     private void initUI() {
         JPanel north = new JPanel(new BorderLayout());
         north.setBackground(AppColors.BG_MAIN);
@@ -55,7 +55,7 @@ public class SavingsGoalPanel extends JPanel {
         add(north, BorderLayout.NORTH);
         add(scroll, BorderLayout.CENTER);
     }
-
+    //Notes if no savings yet
     public void refresh() {
         goalsContainer.removeAll();
         List<SavingsGoal> goals = DataStore.getGoalsByUser(user.getId());
@@ -74,7 +74,7 @@ public class SavingsGoalPanel extends JPanel {
         revalidate();
         repaint();
     }
-
+    //Creates Goal
     private JPanel createGoalCard(SavingsGoal goal) {
         JPanel card = new JPanel(new BorderLayout(10, 6));
         card.setBackground(Color.WHITE);
@@ -136,7 +136,7 @@ public class SavingsGoalPanel extends JPanel {
         card.add(actions, BorderLayout.SOUTH);
         return card;
     }
-
+    //Add Goal
     private void openAddDialog() {
         JDialog d = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), "New Savings Goal", true);
         d.setSize(360, 260);
@@ -178,7 +178,7 @@ public class SavingsGoalPanel extends JPanel {
         d.add(panel);
         d.setVisible(true);
     }
-
+    //Add Funds
     private void openAddFundsDialog(SavingsGoal goal) {
         String input = JOptionPane.showInputDialog(this,
                 "Add funds to \"" + goal.getGoalName() + "\":\nCurrent: " + FormatUtil.currency(goal.getCurrentAmount()),

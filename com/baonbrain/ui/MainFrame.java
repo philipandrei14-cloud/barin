@@ -21,6 +21,7 @@ public class MainFrame extends JFrame {
     private BudgetPanel budgetPanel;
     private SavingsGoalPanel savingsPanel;
     private PredictionPanel predictionPanel;
+    private NotesPanel notesPanel;
 
     public MainFrame(User user) {
         this.currentUser = user;
@@ -53,7 +54,7 @@ public class MainFrame extends JFrame {
 
         // Logo
         JPanel logoPanel = new JPanel();
-        logoPanel.setBackground(new Color(20, 50, 110));
+        logoPanel.setBackground(new Color(20, 70, 110));
         logoPanel.setBorder(new EmptyBorder(18, 16, 18, 16));
         logoPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 80));
         JLabel logo = new JLabel("💰 BaonBrain");
@@ -83,6 +84,7 @@ public class MainFrame extends JFrame {
         sidebar.add(navButton("📋 Budget Limits", "budget"));
         sidebar.add(navButton("🎯 Savings Goals", "savings"));
         sidebar.add(navButton("🔮 Predictions", "prediction"));
+        sidebar.add(navButton("📝 My Notes", "notes"));
 
         sidebar.add(Box.createVerticalGlue());
         sidebar.add(makeDivider());
@@ -140,6 +142,7 @@ public class MainFrame extends JFrame {
         budgetPanel     = new BudgetPanel(currentUser, this);
         savingsPanel    = new SavingsGoalPanel(currentUser, this);
         predictionPanel = new PredictionPanel(currentUser, this);
+        notesPanel      = new NotesPanel(currentUser, this);
 
         contentPanel.add(dashboardPanel,  "dashboard");
         contentPanel.add(incomePanel,     "income");
@@ -147,6 +150,7 @@ public class MainFrame extends JFrame {
         contentPanel.add(budgetPanel,     "budget");
         contentPanel.add(savingsPanel,    "savings");
         contentPanel.add(predictionPanel, "prediction");
+        contentPanel.add(notesPanel,      "notes");
 
         return contentPanel;
     }
@@ -161,6 +165,7 @@ public class MainFrame extends JFrame {
             case "budget":     budgetPanel.refresh();     break;
             case "savings":    savingsPanel.refresh();    break;
             case "prediction": predictionPanel.refresh(); break;
+            case "notes":      notesPanel.refresh();      break;
         }
     }
 

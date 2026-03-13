@@ -29,7 +29,7 @@ public class LoginFrame extends JFrame {
         JPanel root = new JPanel(new BorderLayout());
         root.setBackground(AppColors.BG_MAIN);
 
-        // ── Header ──
+        //Header
         JPanel header = new JPanel();
         header.setBackground(AppColors.PRIMARY);
         header.setLayout(new BoxLayout(header, BoxLayout.Y_AXIS));
@@ -49,7 +49,7 @@ public class LoginFrame extends JFrame {
         header.add(Box.createVerticalStrut(6));
         header.add(tagline);
 
-        // ── Form ──
+        // Form
         JPanel form = new JPanel();
         form.setBackground(AppColors.BG_PANEL);
         form.setLayout(new BoxLayout(form, BoxLayout.Y_AXIS));
@@ -126,7 +126,7 @@ public class LoginFrame extends JFrame {
         new RegisterFrame(this).setVisible(true);
     }
 
-    // ─── Helpers ──────────────────────────────────────────────────────────
+    //Helpers
 
     private JLabel makeLabel(String text) {
         JLabel l = new JLabel(text);
